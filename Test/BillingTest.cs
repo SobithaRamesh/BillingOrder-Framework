@@ -123,8 +123,7 @@ namespace APIAutomation.Test
                 {
                     actualbill = JsonConvert.DeserializeObject<Billing>(response.Content);
 
-                    /* Compare expected(bill) to actual(actualbill)
-                       But not to compare Id                        */
+                    // Compare expected(bill) to actual(actualbill)
                     actualbill.Should().BeEquivalentTo(bill);
                 }
                 else
