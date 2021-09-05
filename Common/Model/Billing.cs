@@ -7,6 +7,17 @@ namespace Common.Model
 {
     public class Billing
     {
+        public Billing()
+        {
+        }
+
+        public Billing(string firstName, string lastname, string email)
+        {
+            FirstName = firstName;
+            LastName = lastname;
+            Email = email;
+        }
+
         [JsonProperty("addressLine1")]
         public string AddressLine1 { get; set; }
 

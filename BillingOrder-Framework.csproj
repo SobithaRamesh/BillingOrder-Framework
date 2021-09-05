@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
@@ -8,7 +8,24 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Common\Debug\**" />
+    <EmbeddedResource Remove="Common\Debug\**" />
+    <None Remove="Common\Debug\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Include="Common\Debug\CSVEx1.cs" />
+    <Compile Include="Common\Debug\CSVEx2.cs" />
+    <Compile Include="Common\Debug\CSVEx3.cs" />
+    <Compile Include="Common\Debug\CSVEx4.cs" />
+    <Compile Include="Common\Debug\LoopEx.cs" />
+    <Compile Include="Common\Debug\StaticEx.cs" />
+    <Compile Include="Common\Debug\TestCaseDataEx.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="FluentAssertions" Version="6.1.0" />
+    <PackageReference Include="LumenWorksCsvReader" Version="4.0.0" />
     <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.9.4" />
     <PackageReference Include="NUnit" Version="3.13.1" />
     <PackageReference Include="NUnit3TestAdapter" Version="3.17.0" />
@@ -17,6 +34,12 @@
     <PackageReference Include="Selenium.Support" Version="3.141.0" />
     <PackageReference Include="Selenium.WebDriver" Version="3.141.0" />
     <PackageReference Include="Selenium.WebDriver.ChromeDriver" Version="93.0.4577.1500" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="Common\TestData\InputData.csv">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
 
 </Project>
